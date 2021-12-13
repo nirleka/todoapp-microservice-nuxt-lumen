@@ -16,3 +16,14 @@
 $router->get('/', function () use ($router) {
     return 'Todo App API: ' . $router->app->version();
 });
+
+$router->group(['middleware' => ['auth', 'cors'],'prefix' => 'api'], function ($router)
+{
+    $router->get('me', 'AuthController@me');
+});
+
+$router->group(['prefix' => 'api', 'middleware' => ['cors']], function () use ($router)
+{
+   $router->post('register', 'AuthController@register');
+   $router->post('login', 'AuthController@login');
+});

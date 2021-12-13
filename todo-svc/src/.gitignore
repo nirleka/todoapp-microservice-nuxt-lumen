@@ -4,3 +4,25 @@ Homestead.json
 Homestead.yaml
 .env
 .phpunit.result.cache
+
+# macOS
+.DS_Store
+
+# Vim swap files
+*.swp
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
