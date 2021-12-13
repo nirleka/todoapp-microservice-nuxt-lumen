@@ -55,7 +55,7 @@ class AuthController extends Controller
      * Get a JWT via given credentials.
      *
      * @OA\Post(
-     *     path="/login",
+     *     path="/api/v1/login",
      *     tags={"auth"},
      *     operationId="login",
      *     @OA\Response(
