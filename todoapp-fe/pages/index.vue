@@ -1,14 +1,14 @@
 <template>
   <div>
-    <login v-if="!isAuthenticated"></login>
+    <login-form v-if="!isAuthenticated" />
   </div>
 </template>
 
 <script>
-import login from '~/components/login.vue'
+import LoginForm from '../components/loginForm.vue'
 
 export default {
-  components: { login },
+  components: { LoginForm },
   data() {
     return {
       isAuthenticated: false,

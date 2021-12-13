@@ -1,9 +1,9 @@
 <template>
-  <b-container class="p-4 mt-4">
-
+  <div>
     <b-row class="justify-content-center">
       <b-col sm="6">
-        <h4 class="mb-4">Todo Login</h4>
+        <h4 v-if="!isRegister" class="mb-4">Todo Login</h4>
+        <h4 v-if="isRegister" class="mb-4">Todo Register</h4>
       </b-col>
     </b-row>
 
@@ -31,17 +31,32 @@
 
     <b-row class="mt-4 justify-content-center">
       <b-col sm="6">
-        <b-button class="float-right" variant="primary">Login</b-button>
-        <b-button class="float-right mr-2" variant="info">Register</b-button>
+        <b-button v-if="!isRegister" class="float-right" variant="primary" @click="login">Login</b-button>
+        <b-button v-if="!isRegister" class="float-right mr-2" variant="info" @click="register">Register</b-button>
+        <b-button v-if="isRegister" class="float-right mr-2" variant="info" @click="submit">Submit</b-button>
+        <b-button v-if="isRegister" class="float-right mr-2" variant="primary" @click="cancel">Cancel</b-button>
       </b-col>
     </b-row>
-
-  </b-container>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Login'
+  props: ['isRegister'],
+  methods: {
+    login() {
+      this.$router.push('/todos');
+    },
+    register() {
+      this.$router.push('/register');
+    },
+    cancel() {
+      this.$router.push('/');
+    },
+    submit() {
+
+    }
+  },
 }
 </script>
 
